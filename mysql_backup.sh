@@ -20,5 +20,5 @@ do
 		continue
 	fi
 
-	mysqldump --user=$db_user --password=$db_pass --host=$db_host $db > $backups_path/$db-$date.sql
+	mysqldump --user=$db_user --password=$db_pass --host=$db_host $db | gzip -c > $backups_path/$db-$date.gz
 done
